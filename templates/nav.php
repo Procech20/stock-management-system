@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!isset($_SESSION['userId'])){
+
+		header('Location: ./login.php');
+	}
+
+?>
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,9 +29,10 @@
         <li><a href="#">Report</a></li>
 
       <li class="logout">
-        <a href="./login.php">Logout</a>
+        <a href="./logout.php">Logout</a>
       </li>
 </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+

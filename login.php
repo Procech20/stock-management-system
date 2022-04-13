@@ -1,3 +1,31 @@
+<?php
+
+	include_once('./database/config.php');
+
+	if (isset($_POST['login'])) {
+
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+
+		$query = "SELECT * FROM users WHERE email = '$email' AND password = '$password'";
+		$result = mysqli_query($connect, "$query");
+
+		if (mysqli_num_rows($result) == 1) {
+			$userId=mysqli_fetch_array(mysqli_query($connect, "$query"))['id'];
+			session_save_path('/var/tmp');
+			session_start();
+			$_SESSION['userId'] = $userId;
+			header('Location: ./index.php');
+		} else {
+			echo "Invalid username or password";
+		}
+	}
+	else {
+		echo "Enter your Email and Password to login";
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,17 +68,17 @@
 	<div class="row">
 		<div class="col-md-4"></div>
 		<div class="col-lg-4">
-			<form class="jumbotron" action="index.php" methode="POST">
+			<form class="jumbotron" action="#" method="post">
 				<div class="form-group">
 					<center><h3>LOGIN</h3></center>
 				<label for="exampleInputEmail1">Email</label>
-				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email...">
+				<input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email...">
 				</div>
 				<div class="form-group">
 				<label for="exampleInputPassword1">Password</label>
-				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="password...">
+				<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="password...">
 				</div>
-				<center><button type="submit" class="btn btn-primary">Login</button></center>
+				<center><button type="submit" class="btn btn-primary" name="login">Login</button></center>
 
 			</form>
 		</div>
