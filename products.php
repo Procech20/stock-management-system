@@ -20,14 +20,6 @@
 					<label for="exampleInputEmail1">Product name</label>
 					<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name of product...">
 					</div>
-					<!-- <div class="form-group">
-					<label for="exampleInputPassword1">Product Type</label>
-					<select name="type" id="type" class="form-control">
-						<option value="medium">Medium</option>
-						<option value="long">Long</option>
-						<option value="short">Short</option>
-					</select>
-					</div> -->
 					<div class="form-group">
 					<label for="exampleInputPassword1">Product Price</label>
 					<input type="number" class="form-control" id="exampleInputPassword1" placeholder="Price in RWF...">

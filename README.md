@@ -1,20 +1,19 @@
 # L5 Saltel trainees April 2022
 
-[My-250-store](www.saltel.com)
+[Lucky-Rice-stock-management-system](www.github.com/procech20/stock-management-system.git)
 
 This is the final project done all trainees who participated in the April 2022 L5 Saltel internship.
 
 ## Description of the project
 
-- The project is a web application that allows the user to create a product, add, retrieve, update and/or delete it a it from the database.
+- The project is a web application that allows the user to add products in stock, manage the stock and get report of the stock.
 
 ### Resources used:
 
 - [PHP](https://www.php.net/)
 - [MySQL](https://www.mysql.com/)
-- [MATERIALIZE](https://materializecss.com/)
+- [Bootstrap](https://getbootstrap.com/)
 - [XAMPP](https://www.apachefriends.org/index.html)
-- [HEROKU](https://www.heroku.com/)
 
 ### How to use
 
@@ -34,3 +33,4 @@ This is an open source project made intirely for education purposes. Any resembl
 ### Contact
 This project was made by L5 Saltel trainees in April 2022.
 Trainer: Prophete ISINGIZWE Reachable via: [Website](www.my-brand-pro.heroku.app), [Linkedin](https://www.linkedin.com/in/procech20) and [Email](mail-to:isingizwepro01@gmail.com)
+Trainer: Alain Tresor UWINEZA Reachable via: [Website](https://alaintresor.github.io/my-brand/UI/), [Linkedin](https://www.linkedin.com/in/alaintresor) and [Email](mail-to:tresoralain35@gmail.com)
