@@ -1,11 +1,12 @@
 <?php
 	$host = 'localhost';
-	$username = 'root';
-	$db = 'stock_management';
+	$user = 'root';
+	$password = '';
+	$db = 'mini_project';
 
-	$connect = mysqli_connect($host, $username, '', $db);
+	$conn = mysqli_connect($host, $user, $password, $db);
 
-	if(!$connect)
+	if(!$conn)
 	{
 		die("Connection failed: " . mysqli_connect_error());
 	}else{

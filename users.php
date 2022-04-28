@@ -1,3 +1,13 @@
+<?php
+	include_once('./config/db_config.php');
+
+	// Writing query to fetch all users ( Read -> C-R-U-D )
+	$sql = "SELECT * FROM accounts ORDER BY Names";
+
+	$result = mysqli_query($conn, $sql);
+
+	$accounts = mysqli_fetch_all($result, MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +20,6 @@
 			font-family: Arial, Helvetica, sans-serif;
 			margin: 0;
 			padding: 0;
-			/* background: url(bg-users.jpeg) no-repeat; */
-			/* background-size: cover; */
 			background: rgba(0, 0, 0, 0.6);
 		}
 		.content-table {
@@ -79,6 +87,15 @@
 			border-radius: 5px;
 			cursor: pointer;
 		}
+		.options {
+			border: none;
+			outline: none;
+			color: #fff;
+			background: orange;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -87,26 +104,28 @@
 	<table class="content-table">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Firstname</th>
-				<th>Lastname</th>
+				<th>Names</th>
 				<th>Email</th>
 				<th>Password</th>
 				<th>Options</th>
 			</tr>
 		</thead>
 		<tbody>
+				<?php foreach($accounts as $account) { ?>
 			<tr class="active-user">
-				<td>1</td>
-				<td>John</td>
-				<td>Doe</td>
-				<td>john.doe@gmail.com</td>
-				<td>John@123</td>
-				<td>
-					<a href=""><input class="edit" type="button" value="Edit"></a>
-					<a href=""><input class="delete" type="button" value="Delete"></a>
-				</td>
+					<td> <?php echo htmlspecialchars($account['Names']); ?> </td>
+					<td> <?php echo htmlspecialchars($account['Email']); ?> </td>
+					<td> <?php echo htmlspecialchars($account['Password']); ?> </td>
+					<td>
+						<a href="accounts.php?id=<?php echo $account['id'] ?>">
+							<input class="edit" type="button" value="Update">
+						</a>
+						<a href="delete.php?id=<?php echo $account['id'] ?>">
+							<input class="delete" type="button" value="Delete">
+						</a>
+					</td>
 			</tr>
+				<?php } ?>
 		</tbody>
 	</table>
 

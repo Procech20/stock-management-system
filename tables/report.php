@@ -1,5 +1,5 @@
 <?php
-	include_once("../database/config.php");
+	include_once("../config/db_config.php");
 	$sql = 'create table report(id int auto_increment key);';
 	$result = $conn->query($sql);
 	if($result === TRUE){

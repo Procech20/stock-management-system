@@ -1,6 +1,6 @@
 <?php
 
-	include_once('./database/config.php');
+	include_once("./config/db_config.php");
 
 	if (isset($_POST['login'])) {
 
@@ -12,7 +12,6 @@
 
 		if (mysqli_num_rows($result) == 1) {
 			$userId=mysqli_fetch_array(mysqli_query($connect, "$query"))['id'];
-			session_save_path('/var/tmp');
 			session_start();
 			$_SESSION['userId'] = $userId;
 			header('Location: ./index.php');
